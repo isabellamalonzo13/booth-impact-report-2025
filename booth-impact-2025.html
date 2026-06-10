@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booth Impact Report 2025 — Growth Without Compromise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BOOTH BRAND SYSTEM ===== */
+    :root {
+      --booth-green:      #0D4B3B;
+      --booth-green-900:  #062A21;
+      --booth-green-800:  #083A2E;
+      --booth-green-500:  #2C7661;
+      --booth-green-300:  #7AAA99;
+      --booth-green-100:  #D4E3DD;
+      --booth-green-50:   #EDF4F1;
+      --booth-teal:       #589992;
+      --booth-teal-300:   #A2C4BF;
+      --booth-teal-100:   #DEEAE8;
+      --booth-lavender:   #CD9ACD;
+      --booth-lavender-700: #A06EA0;
+      --booth-lavender-100: #F3E4F3;
+      --booth-sky:        #DBEAF4;
+      --booth-sky-300:    #ECF3F8;
+      --booth-sky-700:    #9BC2DC;
+      --border:           #E5E9E7;
+      --ink:              #0F1A16;
+      --ink-70:           #3C4845;
+      --ink-50:           #6E7874;
+      --font-d: 'Open Sans', system-ui, sans-serif;
+      --font-b: 'Carlito', 'Open Sans', system-ui, sans-serif;
+      --shadow-sm: 0 2px 6px rgba(11,75,59,0.06), 0 1px 2px rgba(11,75,59,0.04);
+      --shadow-md: 0 8px 20px rgba(11,75,59,0.08), 0 2px 6px rgba(11,75,59,0.04);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-b);
+      color: var(--ink);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 64px;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      transition: box-shadow 200ms;
+    }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo {
+      font-family: var(--font-d); font-weight: 800; font-size: 22px;
+      color: var(--booth-green); text-decoration: none; letter-spacing: -0.03em;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-d); font-size: 13px; font-weight: 600;
+      color: var(--ink-70); text-decoration: none; transition: color 150ms;
+    }
+    .nav-links a:hover { color: var(--booth-green); }
+    .nav-cta {
+      font-family: var(--font-d); font-size: 14px; font-weight: 700;
+      color: #fff; background: var(--booth-green);
+      padding: 10px 22px; border-radius: 999px; text-decoration: none;
+      transition: background 150ms;
+    }
+    .nav-cta:hover { background: var(--booth-green-800); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: var(--booth-green-900);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 40px 100px;
+    }
+    /* Animated grid overlay */
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(88,153,146,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88,153,146,0.08) 1px, transparent 1px);
+      background-size: 80px 80px;
+      animation: gridShift 20s linear infinite;
+    }
+    @keyframes gridShift { from { transform: translateY(0); } to { transform: translateY(80px); } }
+    .hero-glow {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 25% 65%, rgba(88,153,146,0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 75% 30%, rgba(205,154,205,0.12) 0%, transparent 60%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 920px; }
+    .hero-eyebrow {
+      font-family: var(--font-d); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--booth-lavender); margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; display: block; width: 28px; height: 1px;
+      background: var(--booth-lavender); opacity: 0.5;
+    }
+    .hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(52px, 9vw, 96px);
+      font-weight: 800; line-height: 0.97;
+      color: #fff; letter-spacing: -0.04em;
+      margin-bottom: 28px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--booth-teal), var(--booth-lavender));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(17px, 2vw, 21px);
+      color: rgba(255,255,255,0.68);
+      max-width: 580px; margin: 0 auto 48px; line-height: 1.6;
+    }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-hero-primary {
+      font-family: var(--font-d); font-weight: 700; font-size: 15px;
+      color: var(--booth-green); background: #fff;
+      padding: 14px 28px; border-radius: 999px; text-decoration: none;
+      transition: all 150ms;
+    }
+    .btn-hero-primary:hover { background: var(--booth-sky); }
+    .btn-hero-ghost {
+      font-family: var(--font-d); font-weight: 700; font-size: 15px;
+      color: rgba(255,255,255,0.85); background: transparent;
+      padding: 13px 28px; border-radius: 999px; text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.3); transition: all 150ms;
+    }
+    .btn-hero-ghost:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+    /* Hero stat bar */
+    .hero-bar {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 1;
+      background: rgba(0,0,0,0.3);
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    .hero-stat {
+      padding: 18px 40px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-n {
+      display: block; font-family: var(--font-d);
+      font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.02em;
+    }
+    .hero-stat-l {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== EDITORIAL STATEMENT ===== */
+    .editorial {
+      background: #fff; padding: 88px 40px;
+      text-align: center;
+    }
+    .editorial blockquote {
+      max-width: 800px; margin: 0 auto;
+      font-family: var(--font-d);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 700; line-height: 1.35;
+      color: var(--booth-green); letter-spacing: -0.015em;
+    }
+    .editorial blockquote p + p { margin-top: 18px; }
+
+    /* ===== WRAPPERS ===== */
+    .wrap-white { background: #fff; }
+    .wrap-green-50 { background: var(--booth-green-50); }
+    .wrap-sky   { background: var(--booth-sky-300); }
+    .wrap-green { background: var(--booth-green); }
+    .section-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 96px 48px;
+    }
+    @media(max-width:768px){ .section-inner { padding: 64px 24px; } }
+
+    /* ===== TYPOGRAPHY HELPERS ===== */
+    .eyebrow {
+      font-family: var(--font-d); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--booth-lavender-700); margin-bottom: 14px;
+      display: block;
+    }
+    .eyebrow-lt { color: var(--booth-lavender); }
+    h2.st {
+      font-family: var(--font-d); font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 800; color: var(--booth-green);
+      letter-spacing: -0.025em; line-height: 1.08;
+      margin-bottom: 18px; text-wrap: balance;
+    }
+    h2.st-lt { color: #fff; }
+    .lead {
+      font-size: 18px; line-height: 1.65; color: var(--ink-70);
+      max-width: 620px; margin-bottom: 56px;
+    }
+    .lead-lt { color: rgba(255,255,255,0.72); }
+    .pull {
+      font-family: var(--font-d); font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700; color: var(--booth-green); line-height: 1.3;
+      border-left: 4px solid var(--booth-lavender);
+      padding-left: 24px; margin: 32px 0; letter-spacing: -0.01em;
+    }
+    .pull-lt { color: rgba(255,255,255,0.9); border-color: var(--booth-lavender); }
+    .body-text { font-size: 16px; line-height: 1.7; color: var(--ink-70); }
+
+
+
+    /* ===== FADE ANIMATIONS ===== */
+    .f { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .f.in { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+    .d5 { transition-delay: 0.40s; }
+    .d6 { transition-delay: 0.48s; }
+
+    /* ===== AWARD BANNER ===== */
+    .numbers-wrap { display: flex; flex-direction: column; gap: 20px; }
+    .award {
+      background: linear-gradient(135deg, var(--booth-lavender-100), var(--booth-sky-300));
+      border-radius: 16px; padding: 24px 32px;
+      display: flex; align-items: center; gap: 18px;
+      margin-bottom: 64px;
+      border: 1px solid rgba(160,110,160,0.15);
+    }
+    .award-ico { font-size: 32px; flex-shrink: 0; }
+    .award h4 { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: var(--booth-green); }
+    .award p  { font-size: 14px; color: var(--ink-50); margin-top: 3px; }
+
+    /* ===== STATS GRID ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .stat-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 18px; padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 150ms, transform 150ms;
+    }
+    .stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .stat-card.dk { background: var(--booth-green); border-color: transparent; }
+    .sn {
+      font-family: var(--font-d); font-size: 50px; font-weight: 800;
+      color: var(--booth-green); line-height: 1; letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+    .stat-card.dk .sn { color: #fff; }
+    .sl {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink-50); margin-bottom: 12px;
+    }
+    .stat-card.dk .sl { color: rgba(255,255,255,0.55); }
+    .sd { font-size: 14px; line-height: 1.55; color: var(--ink-70); }
+    .stat-card.dk .sd { color: rgba(255,255,255,0.75); }
+
+    /* ===== FOUNDER ===== */
+    .founder-centered {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
+    }
+    .founder-left { display: flex; flex-direction: column; }
+    .founder-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(160deg, var(--booth-green-100) 0%, var(--booth-teal-100) 100%);
+      margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid var(--booth-green-100);
+      overflow: hidden;
+    }
+    .founder-avatar svg { opacity: 0.35; }
+    .founder-avatar span { font-size: 11px; font-style: italic; color: var(--booth-green-300); display: none; }
+    .founder-name {
+      font-family: var(--font-d); font-size: 18px; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--booth-green); margin-bottom: 6px;
+    }
+    .founder-title {
+      font-family: var(--font-d); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-50); margin-bottom: 32px;
+    }
+    .founder-body {
+      text-align: left;
+    }
+    .founder-image-placeholder {
+      width: 100%; aspect-ratio: 4/5; border-radius: 20px;
+      background: var(--booth-green-100);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; order: -1;
+    }
+    .sig { margin-top: 28px; font-family: var(--font-d); font-weight: 700; color: var(--booth-green); font-size: 15px; }
+    .sig small { display: block; font-family: var(--font-b); font-weight: 400; font-size: 13px; color: var(--ink-50); margin-top: 3px; }
+
+    /* ===== PEOPLE ===== */
+    .people-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .metric-chips {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0;
+    }
+    .chip {
+      background: var(--booth-sky-300); border-radius: 14px; padding: 18px 20px;
+    }
+    .chip-n { font-family: var(--font-d); font-size: 26px; font-weight: 800; color: var(--booth-green); }
+    .chip-l { font-size: 12px; color: var(--ink-50); margin-top: 4px; line-height: 1.4; }
+    .people-vis {
+      background: linear-gradient(160deg, var(--booth-green-800), var(--booth-teal));
+      border-radius: 24px; aspect-ratio: 3/4;
+      display: flex; align-items: flex-end; overflow: hidden;
+      position: relative;
+    }
+    .people-vis-bg {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center; opacity: 0.12;
+    }
+    .people-cap {
+      background: rgba(13,75,59,0.88); backdrop-filter: blur(6px);
+      padding: 20px 24px; width: 100%; position: relative; z-index: 1;
+    }
+    .people-cap h4 { font-family: var(--font-d); font-weight: 700; color: #fff; font-size: 16px; }
+    .people-cap p  { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 3px; }
+
+    /* ===== COMMUNITY ===== */
+    .feature-block {
+      background: var(--booth-green); border-radius: 24px;
+      padding: 56px 60px; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 56px;
+      align-items: center; margin-bottom: 40px;
+    }
+    .feature-block h3 {
+      font-family: var(--font-d); font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px;
+    }
+    .feature-block p { color: rgba(255,255,255,0.75); font-size: 16px; line-height: 1.65; margin-bottom: 20px; }
+    .btn-ghost-lt {
+      font-family: var(--font-d); font-weight: 700; font-size: 14px;
+      color: rgba(255,255,255,0.9); background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.3); padding: 11px 22px;
+      border-radius: 999px; text-decoration: none; display: inline-block;
+      transition: all 150ms;
+    }
+    .btn-ghost-lt:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
+    .c-stats { display: flex; flex-direction: column; gap: 22px; }
+    .c-stat { display: flex; align-items: center; gap: 22px; }
+    .c-stat-n { font-family: var(--font-d); font-size: 36px; font-weight: 800; color: #fff; min-width: 130px; line-height: 1; }
+    .c-stat-l { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.4; }
+
+    .comm-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .comm-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      padding: 28px; box-shadow: var(--shadow-sm);
+      transition: box-shadow 150ms, transform 150ms;
+    }
+    .comm-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .comm-ico {
+      width: 44px; height: 44px; background: var(--booth-sky-300);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 14px;
+    }
+    .comm-card h4 {
+      font-family: var(--font-d); font-size: 16px; font-weight: 700;
+      color: var(--booth-green); margin-bottom: 8px;
+    }
+    .comm-card p { font-size: 14px; color: var(--ink-50); line-height: 1.55; }
+    .comm-card .cn { font-family: var(--font-d); font-size: 22px; font-weight: 800; color: var(--booth-green); margin-top: 16px; }
+    .comm-card .cl { font-size: 11px; color: var(--ink-50); text-transform: uppercase; letter-spacing: 0.07em; }
+
+    /* Card photo placeholder */
+    .card-photo {
+      width: calc(100% + 56px); margin: -28px -28px 20px;
+      height: 160px;
+      background: var(--booth-sky-300);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      border-radius: 18px 18px 0 0;
+    }
+    .card-photo svg { opacity: 0.3; }
+    .card-photo span {
+      font-size: 10px; color: var(--ink-50);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      font-family: var(--font-d); font-weight: 600;
+    }
+
+    /* ===== WORLD MAP ===== */
+    .map-wrap {
+      background: var(--booth-green-50); border-radius: 24px;
+      padding: 48px; margin-top: 56px;
+    }
+    .map-title {
+      font-family: var(--font-d); font-size: 22px; font-weight: 800;
+      color: var(--booth-green); text-align: center; margin-bottom: 32px;
+    }
+    .map-regions {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .map-reg {
+      background: #fff; border: 2px solid var(--border);
+      border-radius: 18px; padding: 26px;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .map-reg:hover { border-color: var(--booth-teal); box-shadow: var(--shadow-md); }
+    .map-flag { font-size: 28px; margin-bottom: 12px; }
+    .map-reg h4 { font-family: var(--font-d); font-size: 18px; font-weight: 700; color: var(--booth-green); margin-bottom: 12px; }
+    .map-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .mtag {
+      background: var(--booth-sky); color: var(--booth-green);
+      font-size: 11px; font-weight: 700; padding: 4px 10px;
+      border-radius: 999px; letter-spacing: 0.02em;
+    }
+    .map-n { font-family: var(--font-d); font-size: 22px; font-weight: 800; color: var(--booth-teal); }
+    .map-nl { font-size: 11px; color: var(--ink-50); text-transform: uppercase; letter-spacing: 0.07em; }
+
+    /* ===== PLANET ===== */
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+    .cert-card {
+      background: var(--booth-green); border-radius: 20px;
+      padding: 36px; display: flex; align-items: flex-start; gap: 20px;
+    }
+    .cert-ico {
+      width: 56px; height: 56px; background: rgba(255,255,255,0.12);
+      border-radius: 14px; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .cert-card h4 { font-family: var(--font-d); font-weight: 700; color: #fff; font-size: 17px; margin-bottom: 8px; }
+    .cert-card p  { color: rgba(255,255,255,0.72); font-size: 14px; line-height: 1.55; }
+
+    .tree-card {
+      background: var(--booth-sky-300); border-radius: 20px; padding: 40px;
+    }
+    .tree-card h4 { font-family: var(--font-d); font-size: 22px; font-weight: 800; color: var(--booth-green); margin-bottom: 8px; }
+    .tree-card p  { font-size: 15px; color: var(--ink-70); line-height: 1.6; margin-bottom: 24px; }
+    .prog-labels { display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; color: var(--booth-green); margin-bottom: 8px; }
+    .prog-track { background: rgba(13,75,59,0.12); border-radius: 999px; height: 12px; overflow: hidden; }
+    .prog-fill { background: var(--booth-green); height: 100%; border-radius: 999px; width: 0%; transition: width 1.6s cubic-bezier(.16,1,.3,1); }
+    .prog-note { font-size: 13px; color: var(--ink-50); margin-top: 8px; }
+
+    .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+    .action-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 26px; box-shadow: var(--shadow-sm); }
+    .action-card h5 { font-family: var(--font-d); font-size: 15px; font-weight: 700; color: var(--booth-green); margin-bottom: 8px; }
+    .action-card p  { font-size: 13px; color: var(--ink-50); line-height: 1.55; }
+
+    /* ===== PARTNERS ===== */
+    .partner-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .pchip {
+      background: var(--booth-sky-300); border: 1px solid var(--border);
+      border-radius: 12px; padding: 12px 18px;
+      font-family: var(--font-d); font-weight: 700; font-size: 13px;
+      color: var(--booth-green);
+    }
+    .impact-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 56px; padding-top: 56px; border-top: 1px solid var(--border);
+    }
+    .impact-item { text-align: center; }
+    .impact-n { font-family: var(--font-d); font-size: 40px; font-weight: 800; color: var(--booth-green); letter-spacing: -0.025em; }
+    .impact-l { font-size: 14px; color: var(--ink-50); margin-top: 6px; }
+
+    /* ===== LOOKING AHEAD ===== */
+    .commitments {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px;
+    }
+    .commitment {
+      background: var(--booth-green-50); border: 1px solid var(--booth-green-100);
+      border-radius: 18px; padding: 28px;
+    }
+    .comm-num { font-family: var(--font-d); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--booth-lavender-700); margin-bottom: 12px; }
+    .commitment h4 { font-family: var(--font-d); font-size: 16px; font-weight: 700; color: var(--booth-green); line-height: 1.35; }
+
+    /* ===== DOWNLOAD CTA ===== */
+    .cta-section {
+      background: var(--booth-green); padding: 96px 48px; text-align: center;
+    }
+    .cta-section h2 {
+      font-family: var(--font-d); font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 800; color: #fff; letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .cta-section p { font-size: 18px; color: rgba(255,255,255,0.72); max-width: 520px; margin: 0 auto 40px; line-height: 1.6; }
+    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--booth-green-900); padding: 48px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    }
+    .f-logo { font-family: var(--font-d); font-size: 20px; font-weight: 800; color: rgba(255,255,255,0.85); letter-spacing: -0.03em; }
+    .f-text { font-size: 13px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
+    .f-certs { display: flex; gap: 10px; flex-wrap: wrap; }
+    .f-cert {
+      background: rgba(255,255,255,0.08); border-radius: 8px;
+      padding: 7px 13px; font-size: 11px; font-weight: 700;
+      color: rgba(255,255,255,0.6); font-family: var(--font-d); letter-spacing: 0.06em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1000px){
+      .founder-grid, .people-grid, .founder-centered { grid-template-columns: 1fr; gap: 40px; }
+      .founder-img, .people-vis { aspect-ratio: 3/2; }
+      .commitments, .action-grid { grid-template-columns: 1fr 1fr; }
+      .feature-block { grid-template-columns: 1fr; padding: 40px; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .comm-cards, .map-regions { grid-template-columns: 1fr 1fr; }
+      .impact-row { grid-template-columns: 1fr; }
+    }
+    @media(max-width:640px){
+      .stats-grid, .commitments, .action-grid, .comm-cards, .map-regions, .metric-chips, .impact-row { grid-template-columns: 1fr; }
+      .hero-bar { display: none; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+    }
+  
+      .climate-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .climate-card { background: var(--booth-sky); border-radius: 18px; padding: 32px 28px; border: 1px solid var(--booth-sky-700); }
+      .climate-card-label { font-family: var(--font-d); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--booth-green-300); margin-bottom: 10px; }
+      .climate-card-n { font-family: var(--font-d); font-size: 52px; font-weight: 800; color: var(--booth-green); line-height: 1; letter-spacing: -0.03em; margin-bottom: 12px; }
+      .climate-card-desc { font-size: 13px; color: var(--ink-50); line-height: 1.55; }
+      .climate-footnote { font-size: 12px; color: var(--ink-50); margin-top: 16px; line-height: 1.6; text-align: center; }
+      @media(max-width:768px){ .climate-cards { grid-template-columns: 1fr; } }
+
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">Booth</a>
+  <ul class="nav-links">
+    <li><a href="#numbers">By the numbers</a></li>
+    <li><a href="#people">People</a></li>
+    <li><a href="#communities">Communities</a></li>
+    <li><a href="#planet">Planet</a></li>
+    <li><a href="#ahead">What's next</a></li>
+  </ul>
+  <a class="nav-cta" href="#download">Download report</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <h1>Growth<br><em>Without</em><br>Compromise</h1>
+    <p class="hero-sub">Our 2025 Impact Report</p>
+    <div class="hero-ctas">
+      <a href="#founder" class="btn-hero-primary">Read the report</a>
+      <a href="#download" class="btn-hero-ghost">Download PDF</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<div class="wrap-sky" id="founder">
+  <div class="section-inner">
+    <div class="founder-centered">
+      <div class="founder-left">
+      <span class="eyebrow f">Founder's Note</span>
+      <h2 class="st f d1" style="margin-bottom:32px;">A note from Jamie Booth</h2>
+      <div class="founder-body f d2">
+        <p class="body-text" style="margin-bottom:20px;">Here’s the honest truth: we’re doing good work. Work we’re proud of. And it’s still not enough.</p>
+        <p class="body-text" style="margin-bottom:20px;">The scale of need is bigger than any one company can carry. In the Philippines—where much of our work is focused—the gaps are visible every day. Beyond it, there are places where the need is deeper, funding is thinner, and urgency is sharper.</p>
+        <p class="body-text" style="margin-bottom:20px;">We grow. We hire. We create opportunity. And still, we’re operating on the edges of a much larger problem.</p>
+        <p class="body-text" style="margin-bottom:20px;">So we stopped acting like we could solve it alone.</p>
+        <p class="body-text" style="margin-bottom:20px;">That’s what 2025 clarified for us. Impact doesn’t scale through a single company, no matter how well it’s run. It scales through networks—B Corps, 1% for the Planet members, and companies that have decided impact is part of the operating system, not a side project.</p>
+        <p class="body-text" style="margin-bottom:20px;">We need more of them. A lot more.</p>
+        <p class="body-text" style="margin-bottom:20px;">This report isn’t a scoreboard. It’s a signal.</p>
+        <p class="body-text" style="margin-bottom:20px;">If you’re building a business and tired of choosing between growth and doing the right thing, there’s another way—through collective action, shared accountability, and a willingness to put numbers behind intent.</p>
+        <p class="body-text" style="margin-bottom:20px;">Because the world doesn’t need more statements about sustainability.</p>
+        <p class="body-text" style="margin-bottom:20px;">It needs more companies willing to carry it.</p>
+        <p class="body-text" style="font-weight:700; color:var(--booth-green);">That’s the work ahead.</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px; margin-top:36px; padding-top:28px; border-top:1px solid var(--booth-green-100);">
+        <div style="width:72px; height:72px; border-radius:50%; background:linear-gradient(160deg, var(--booth-green-100) 0%, var(--booth-teal-100) 100%); border:3px solid var(--booth-green-100); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--booth-green-300)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="14" rx="2"/>
+            <circle cx="12" cy="13" r="3"/>
+            <path d="M8 6l1.5-2h5L16 6"/>
+          </svg>
+          <span style="font-family:var(--font-d); font-size:7px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--booth-green-300);">Photo</span>
+        </div>
+        <div>
+          <div style="font-family:var(--font-d); font-size:16px; font-weight:800; color:var(--booth-green); letter-spacing:0.02em;">Jamie Booth</div>
+          <div style="font-family:var(--font-d); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-50); margin-top:3px;">Co-Founder, Booth</div>
+        </div>
+      </div>
+      </div><!-- /founder-left -->
+      <div class="founder-image-placeholder f d2">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--booth-green-300)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="20" height="14" rx="2"/>
+          <circle cx="12" cy="13" r="3"/>
+          <path d="M8 6l1.5-2h5L16 6"/>
+        </svg>
+        <span style="font-family:var(--font-d); font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--booth-green-300);">Community Team Photo</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BY THE NUMBERS -->
+<div class="wrap-white" id="numbers">
+  <div class="section-inner">
+    <span class="eyebrow f">2025 in numbers</span>
+    <h2 class="st f d1">The numbers behind the work.</h2>
+    <p class="lead f d2">Across people, communities, and planet — 2025 was Booth's most active year of impact to date.</p>
+
+    <div class="numbers-wrap">
+    <div class="stats-grid">
+      <div class="stat-card dk f d2">
+        <div class="sn">7,144</div>
+        <div class="sl">Volunteer Hours</div>
+        <p class="sd">On-the-ground work across rivers, forests, farms, and communities in three continents.</p>
+      </div>
+      <div class="stat-card f d3">
+        <div class="sn">656</div>
+        <div class="sl">Team Volunteers</div>
+        <p class="sd">Hundreds of our team members showed up in person last year, advancing community-led projects through hands-on field work.</p>
+      </div>
+      <div class="stat-card f d4">
+        <div class="sn">$396K</div>
+        <div class="sl">Total Contribution</div>
+        <p class="sd">$176,594 was donated directly to community partners, while $220,342 funded the support and resources behind employee volunteer initiatives.</p>
+      </div>
+
+
+    <div class="award f d2">
+      <div class="award-badge">
+        <div class="award-badge-inner">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2l2.4 7.2H24l-6.2 4.5 2.4 7.3L14 17l-6.2 4-2.4-7.3L1.4 9.2H8.6z"/>
+            <circle cx="14" cy="13" r="4" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+          </svg>
+          <div class="award-badge-text">Gold</div>
+        </div>
+      </div>
+      <div>
+        <h4>OIR Gold Award in Community Building — 2025</h4>
+        <p>Recognized for outstanding contribution to community development across our operating regions.</p>
+      </div>
+    </div>
+
+    <style>
+      .award-badge {
+        width: 72px; height: 72px; flex-shrink: 0;
+        background: linear-gradient(145deg, var(--booth-green), var(--booth-green-500));
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 0 0 4px var(--booth-green-100), 0 4px 12px rgba(13,75,59,0.2);
+      }
+      .award-badge-inner {
+        display: flex; flex-direction: column; align-items: center; gap: 2px;
+      }
+      .award-badge-text {
+        font-family: var(--font-d); font-size: 9px; font-weight: 800;
+        letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.85);
+      }
+      .award { align-items: center; width: 100%; grid-column: 1 / -1; }
+    </style>
+  </div>
+</div>
+
+<!-- PEOPLE -->
+<div class="wrap-sky" id="people">
+  <div class="section-inner">
+
+    <!-- ROW 1: Image left + intro text right -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-bottom:56px;">
+      <div class="f d2">
+        <span class="eyebrow">Our people · B Corp Certified</span>
+        <h2 class="st" style="margin-bottom:24px;">Becoming a Certified B Corporation™</h2>
+        <p class="body-text" style="margin-bottom:16px;">B Corp Certification wasn't the goal. Accountability was.</p>
+        <p class="body-text" style="margin-bottom:16px;">Three years ago, we entered the B Corp process to measure ourselves against a higher standard—one that examines how a business treats its people, serves its communities, manages its environmental impact, and governs itself over the long term.</p>
+        <p class="body-text" style="margin-bottom:16px;">In August 2025, Booth became a Certified B Corporation™, joining a global community of businesses using profit as a tool for positive impact.</p>
+        <p class="body-text" style="margin-bottom:16px;">The certification reflects work happening across the company. But if there's one area where that commitment shows up every day, it's in our people.</p>
+        <p class="body-text">From employee wellbeing and engagement to leadership representation and responsible purchasing practices, these are some of the ways we invest in the people who help build Booth.</p>
+      </div>
+      <div style="width:100%; aspect-ratio:4/5; border-radius:20px; background:var(--booth-green-100); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;" class="f d1">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--booth-green-300)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="20" height="14" rx="2"/>
+          <circle cx="12" cy="13" r="3"/>
+          <path d="M8 6l1.5-2h5L16 6"/>
+        </svg>
+        <span style="font-family:var(--font-d); font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--booth-green-300);">Team Photo</span>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <hr style="border:none; border-top:1px solid var(--booth-green-100); margin:0 0 48px;" class="f d2">
+
+    <!-- PULL QUOTE -->
+    <div class="carmen-quote f d3">
+      <div class="carmen-avatar"></div>
+      <div class="carmen-quote-text">
+        <p>"We didn't pursue B Corp status to check a box. We did it to show our team and our clients that we're building Booth for the long haul, with our values intact."</p>
+        <div class="carmen-attr">Carmen Booth · Co-Founder, Booth</div>
+      </div>
+    </div>
+    <style>
+      .carmen-quote {
+        display: flex; gap: 20px; align-items: flex-start;
+        background: #fff; border-radius: 24px;
+        border: 1px solid var(--border);
+        padding: 36px 40px; margin-bottom: 48px;
+      }
+      .carmen-avatar {
+        width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+        background: linear-gradient(160deg, var(--booth-green-100), var(--booth-teal-100));
+        border: 2px solid var(--booth-green-100);
+        display: flex; align-items: center; justify-content: center;
+        overflow: hidden;
+      }
+      .carmen-quote-text p {
+        font-family: var(--font-d); font-size: 15px; font-weight: 600;
+        color: var(--booth-green); line-height: 1.6;
+        font-style: italic; margin-bottom: 10px;
+      }
+      .carmen-attr {
+        font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+        color: var(--ink-50); text-transform: uppercase;
+        font-family: var(--font-d);
+      }
+    </style>
+
+    <!-- ROW 2: B Corp score left + 3 chips stacked right -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; margin-bottom:48px;">
+      <div class="bcorp-score-block f d4">
+        <div class="bcorp-score-n">83.4</div>
+        <div class="bcorp-score-label">Certified B Corp Score · August 2025</div>
+        <div class="bcorp-score-sub">Above the median score for certified B Corps worldwide</div>
+      </div>
+      <style>
+        .bcorp-score-block {
+          background: var(--booth-green); border-radius: 16px;
+          padding: 32px 36px; height: 100%; min-height: 220px;
+          display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;
+          gap: 4px; box-sizing: border-box; text-align: right;
+        }
+        .bcorp-score-n {
+          font-family: var(--font-d); font-size: 72px; font-weight: 800;
+          color: #fff; line-height: 1; letter-spacing: -0.04em;
+        }
+        .bcorp-score-label {
+          font-family: var(--font-d); font-size: 13px; font-weight: 700;
+          letter-spacing: 0.08em; text-transform: uppercase;
+          color: var(--booth-lavender); margin-top: 4px;
+        }
+        .bcorp-score-sub {
+          font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.5;
+        }
+      </style>
+      <div style="display:flex; flex-direction:column; gap:16px;" class="f d4">
+        <div class="chip" style="width:100%; box-sizing:border-box;">
+          <div class="chip-n">50%+</div>
+          <div class="chip-l">Women in leadership</div>
+        </div>
+        <div class="chip" style="width:100%; box-sizing:border-box;">
+          <div class="chip-n">81–90%</div>
+          <div class="chip-l">Team satisfaction &amp; engagement</div>
+        </div>
+        <div class="chip" style="width:100%; box-sizing:border-box;">
+          <div class="chip-n">30%+</div>
+          <div class="chip-l">Executives from underrepresented groups</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- People info list -->
+    <div class="people-info-list f d5">
+      <div class="people-info-item">
+        <div class="people-info-label">How we invest in people</div>
+        <p class="people-info-text">Engaged people do better work. We invest in the conditions that drive it — benefits, inclusion practices, and a culture built for the long haul.</p>
+      </div>
+      <div class="people-info-item">
+        <div class="people-info-label">What we track</div>
+        <p class="people-info-text">Workforce data across gender, engagement, and development, benchmarked against industry standards. 20–29% of our workforce lives in low-income areas. That reality informs how and where we invest.</p>
+      </div>
+      <div class="people-info-item">
+        <div class="people-info-label">How we spend</div>
+        <p class="people-info-text">40–59% of our procurement goes to local independent suppliers, and 10–24% to businesses majority-owned by women or underrepresented groups.</p>
+      </div>
+      <div class="people-info-item">
+        <div class="people-info-label">What's next</div>
+        <p class="people-info-text">We're developing our JEDI (Justice, Equity, Diversity, and Inclusion) Data Collection Policy to better understand representation at every level of the organization, including more precise racial and ethnic data over time.</p>
+      </div>
+    </div>
+    <style>
+      .people-info-list { margin-top: 16px; }
+      .people-info-item { padding: 20px 0; border-top: 1px solid var(--border); display: flex; gap: 32px; align-items: baseline; }
+      .people-info-item:last-child { border-bottom: 1px solid var(--border); }
+      .people-info-label { font-family: var(--font-d); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--booth-lavender-700); min-width: 180px; flex-shrink: 0; }
+      .people-info-text { font-size: 14px; color: var(--ink-70); line-height: 1.6; margin: 0; }
+      @media(max-width:640px){ .people-info-item { flex-direction: column; gap: 8px; } .people-info-label { min-width: unset; } }
+    </style>
+
+  </div>
+</div>
+
+<!-- PLANET -->
+<div class="wrap-green-50" id="planet">
+  <div class="section-inner">
+    <span class="eyebrow f">The planet we depend on</span>
+    <h2 class="st f d1">We owe the planet more than good intentions.</h2>
+    <p class="lead f d2" style="margin-bottom:28px;">Each year, we measure our carbon footprint through Change Climate and offset the emissions we can't yet eliminate through SeaTrees, supporting verified carbon projects and coastal ecosystem restoration.</p>
+    <div class="f d2" style="background:#ffffff; border:1px solid #e0e0e0; border-radius:12px; padding:16px 20px; margin-bottom:28px; display:inline-block;">
+      <p style="margin:0; font-size:14px; color:var(--ink-50); line-height:1.6;">The figures below are based on our 2024 reporting period. Our 2025 results will be available following our next certification cycle.</p>
+    </div>
+
+    <div class="climate-cards f d1">
+      <div class="climate-card">
+        <div class="climate-card-label">tCO₂e measured</div>
+        <div class="climate-card-n">2,345</div>
+        <div class="climate-card-desc">Equivalent to 523 gas-powered cars driven for a year · 2024 data</div>
+      </div>
+      <div class="climate-card">
+        <div class="climate-card-label">Tonnes offset</div>
+        <div class="climate-card-n">1,759</div>
+        <div class="climate-card-desc">Via SeaTrees · Southern Cardamom REDD+ forest conservation, Cambodia</div>
+      </div>
+      <div class="climate-card">
+        <div class="climate-card-label">Invested in climate solutions</div>
+        <div class="climate-card-n">$35,284</div>
+        <div class="climate-card-desc">Includes carbon credits, sustainability operations, and low-carbon materials · 2024 data</div>
+      </div>
+    </div>
+    <p class="climate-footnote f d2">Change Climate Certified since 2021 · 2025 final figures expected Q3 · Targets underway: 5% recycling rate · 10% electricity reduction</p>
+  </div>
+</div>
+
+<!-- COMMUNITIES -->
+<div class="wrap-white" id="communities">
+  <div class="section-inner" style="padding-bottom:48px;">
+    <span class="eyebrow f">Communities</span>
+    <h2 class="st f d1">Our 1% in the field</h2>
+    <p class="lead f d2">This is what 1% for the Planet looks like in practice. Booth commits 1% of annual revenue to environmental organizations working on the ground. In 2025, our work expanded to seven partners across three continents.</p>
+
+    <!-- ARK Solves Feature -->
+    <div class="feature-block f d2" style="display:block; padding:0; overflow:hidden;">
+      <div style="width:100%; height:220px; background:rgba(255,255,255,0.06); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.08);">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+        <span style="font-family:var(--font-d); font-size:10px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3);">Photo</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:56px 60px;">
+      <div>
+        <span class="eyebrow eyebrow-lt">ARK Solves · Feed Back Program</span>
+        <h3 style="text-transform:uppercase; letter-spacing:0.04em; line-height:1.2;">We chose to support sustainable food solutions to uplift Filipino communities.</h3>
+        <p>We partnered with ARK Solves because we believe in their approach to creating self-sustaining food solutions &amp; livelihood opportunities for families across the Philippines.</p>
+        <a href="#" class="btn-ghost-lt" style="margin-top:20px;">Read the story</a>
+      </div>
+      <div class="c-stats" style="align-self:center;">
+        <div class="c-stat">
+          <div class="c-stat-n">138,000</div>
+          <div class="c-stat-l">Lives reached through the Feed Back program (cumulative)</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat-n">19,000</div>
+          <div class="c-stat-l">Families who now grow their own food</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat-n">122</div>
+          <div class="c-stat-l">Communities that have graduated from the program</div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+    <!-- Community Cards Row 1 -->
+    <div class="comm-cards">
+      <div class="comm-card f d2">
+        <div class="card-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D4B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg><span>Photo</span></div>
+        <h4>Hope for the Island</h4>
+        <p>A Siargao-based nonprofit organization that focuses on providing a safe space for children and youth, education, emergency care, and sustainable livelihoods.</p>
+        <p style="margin-top:8px;">We partnered to help rebuild their Kalinga House—a space for learning, care, and stability for children on the island, after it was devastated by a typhoon.</p>
+        <div class="cn">48 hrs</div>
+        <div class="cl">Volunteer Hours</div>
+      </div>
+      <div class="comm-card f d3">
+        <div class="card-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D4B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg><span>Photo</span></div>
+        <h4>MAD Earth</h4>
+        <p>Their work combines environmental restoration and community-led livelihood development across the Philippines.</p>
+        <p style="margin-top:8px;">We joined on-the-ground restoration at Mt. Purro Nature Reserve, clearing river systems and preparing native seedlings for reforestation alongside local community efforts.</p>
+        <div class="cn">813 hrs</div>
+        <div class="cl">Volunteer Hours</div>
+      </div>
+      <div class="comm-card f d4">
+        <div class="card-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D4B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg><span>Photo</span></div>
+        <h4>World Wide Fund for Nature</h4>
+        <p>Their work brings together environmental conservation, biodiversity protection, and sustainable community development across Metro Manila.</p>
+        <p style="margin-top:8px;">We supported urban gardening programs and joined community efforts tied to wildlife protection across Metro Manila.</p>
+        <div class="cn">6,075 hrs</div>
+        <div class="cl">Volunteer Hours</div>
+      </div>
+    </div>
+
+    <!-- Community Cards Row 2 -->
+    <div class="comm-cards" style="margin-top:20px;">
+      <div class="comm-card f d5">
+        <div class="card-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D4B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg><span>Photo</span></div>
+        <h4>Lokal Lab · Siargao</h4>
+        <p>A community-built market space along the San Isidro River in Siargao, created to support local producers and small livelihoods.</p>
+        <p style="margin-top:8px;">We supported the build of a riverside market that brings farmers, fishers, and small businesses closer to daily trade and community life.</p>
+        <div class="cn">48 hrs</div>
+        <div class="cl">Volunteer Hours</div>
+      </div>
+      <div class="comm-card f d6">
+        <div class="card-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D4B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg><span>Photo</span></div>
+        <h4>Animal Bank · Colombia</h4>
+        <p>An organization working with local communities to restore ecosystems in the Páramos — high-altitude wetlands that supply freshwater across South America.</p>
+        <p style="margin-top:8px;">We supported reforestation work in the Páramos alongside local teams restoring native landscapes and protecting water systems that serve surrounding communities.</p>
+        <div class="cn">108 hrs</div>
+        <div class="cl">Volunteer Hours</div>
+      </div>
+      <div class="comm-card f d7">
+        <div class="card-photo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D4B3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 6l1.5-2h5L16 6"/></svg><span>Photo</span></div>
+        <h4>Cheakamus Foundation · Canada</h4>
+        <p>A conservation organization working to restore salmon populations and river systems in British Columbia.</p>
+        <p style="margin-top:8px;">We were there during spawning season, when salmon were moving through the river. Work on the ground focused on clearing debris, opening a beaver dam blocking their route upstream, and supporting maintenance inside the hatchery.</p>
+        <div class="cn">52 hrs</div>
+        <div class="cl">Volunteer Hours</div>
+      </div>
+    </div>
+
+    <!-- Centre for Sustainability -->
+    <div class="comm-cards" style="margin-top:20px;">
+      <div class="comm-card f d8" style="grid-column: 1 / -1;">
+        <div style="display:flex; gap:16px; align-items:flex-start;">
+          <div>
+            <h4>Centre for Sustainability · Philippines</h4>
+            <p>Most of our 2025 support went to two long-term initiatives led by the Centre for Sustainability.</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;">
+              <div>
+                <div style="font-family:var(--font-d); font-size:13px; font-weight:700; color:var(--booth-green); margin-bottom:4px;">Project Almaciga</div>
+                <p style="font-size:13px; color:var(--ink-50); line-height:1.55;">Restoring the Almaciga tree — an endemic Philippine species in decline — through protection and regeneration efforts aimed at strengthening its population for the future.</p>
+              </div>
+              <div>
+                <div style="font-family:var(--font-d); font-size:13px; font-weight:700; color:var(--booth-green); margin-bottom:4px;">Sultan Peak Conservation</div>
+                <p style="font-size:13px; color:var(--ink-50); line-height:1.55;">Field research and community engagement in Sultan Peak, including visits with local communities and land mapping to better understand long-term conservation needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- COLLECTIVE ACTION -->
+<div class="wrap-sky">
+  <div class="section-inner">
+    <span class="eyebrow f">The power of collective action</span>
+    <h2 class="st f d1">We don't do this alone.</h2>
+    <p class="lead f d2">Partnerships multiply what any single company can achieve. Here are the organizations we stand with.</p>
+    <div class="partner-chips f d3">
+      <div class="pchip">B Corp</div>
+      <div class="pchip">1% for the Planet</div>
+      <div class="pchip">The Change Climate Project</div>
+      <div class="pchip">SeaTrees</div>
+      <div class="pchip">World Wide Fund for Nature</div>
+      <div class="pchip">ARK Solves</div>
+      <div class="pchip">Hope for the Island</div>
+      <div class="pchip">Centre for Sustainability</div>
+      <div class="pchip">MAD Earth</div>
+      <div class="pchip">Lokal Lab</div>
+      <div class="pchip">Animal Bank</div>
+      <div class="pchip">Cheakamus Foundation</div>
+      <div class="pchip">Let's Play</div>
+      <div class="pchip">Wildcoast</div>
+    </div>
+  </div>
+</div>
+
+<!-- LOOKING AHEAD -->
+<div class="wrap-white" id="ahead">
+  <div class="section-inner">
+    <span class="eyebrow f">Looking ahead</span>
+    <h2 class="st f d1">The work isn't done.</h2>
+    <p class="lead f d2">Here's what we're committing to next.</p>
+
+    <div class="commitments">
+      <div class="commitment f d1">
+        <div class="comm-num">01 · People</div>
+        <h4>Advance JEDI (Justice, Equity, Diversity, and Inclusion) data collection — so we can understand and improve representation at every level of our organization</h4>
+      </div>
+      <div class="commitment f d2">
+        <div class="comm-num">02 · Planet</div>
+        <h4>Deepen environmental partnerships with MAD Earth, WWF, and Centre for Sustainability — moving from one-off activities toward sustained, year-over-year conservation commitments</h4>
+      </div>
+      <div class="commitment f d3">
+        <div class="comm-num">03 · Forests</div>
+        <h4>Reach 10,000 Almaciga seedlings and advocate for Sultan's Peak — a biodiversity-rich forest in the Philippines — to receive official government protection as a National Forest</h4>
+      </div>
+      <div class="commitment f d4">
+        <div class="comm-num">04 · Community</div>
+        <h4>Expand the ARK Solves partnership — scale food security programming beyond 122 communities</h4>
+      </div>
+      <div class="commitment f d5">
+        <div class="comm-num">05 · Volunteers</div>
+        <h4>Shift to departmental CSR — empowering each team to choose and lead their own causes, so our people engage with the work that matters most to them</h4>
+      </div>
+      <div class="commitment f d6">
+        <div class="comm-num">06 · Reporting</div>
+        <h4>Strengthen impact measurement — from ranges to exact numbers, comparable year over year</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DOWNLOAD CTA -->
+<section class="cta-section" id="download">
+  <h2>This is how we grow.</h2>
+  <p>With accountability. With communities. And with more work ahead than behind us.</p>
+  <div class="cta-row">
+    <a href="#" class="btn-hero-primary">Download Full Report</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">Booth</div>
+  <div class="f-text">
+    Impact Report 2025 &middot; hirebooth.com<br>
+    Human Talent. Smart Tools. Zero Compromise.
+  </div>
+  <div class="f-certs">
+    <span class="f-cert">B Corp</span>
+    <span class="f-cert">Change Climate Project</span>
+    <span class="f-cert">1% for the Planet</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.f').forEach(el => obs.observe(el));
+
+  // Nav scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 48);
+  });
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
